@@ -30,3 +30,6 @@ group :development do
   gem "listen", "~> 3.3"
 end
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+  gem 'devise'
+  gem 'devise-bootstrapped', github: 'excid3/devise-bootstrapped', branch: 'bootstrap4'
