@@ -12,7 +12,7 @@ gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.7"
 # gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'
-gem 'image_processing', '~> 1.2'
+gem "image_processing", "~> 1.2"
 gem "bootsnap", ">= 1.4.4", require: false
 
 group :development, :test do
@@ -22,7 +22,8 @@ group :development, :test do
   gem "rspec-rails"
   gem "factory_bot_rails"
   gem "standard"
-  gem 'shoulda-matchers', require: false
+  gem "shoulda-matchers", require: false
+  gem "faker"
 end
 
 group :development do
@@ -32,5 +33,5 @@ group :development do
 end
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'devise'
-gem 'devise-bootstrapped', github: 'excid3/devise-bootstrapped', branch: 'bootstrap4'
+gem "devise"
+gem "devise-bootstrapped", github: "excid3/devise-bootstrapped", branch: "bootstrap4"

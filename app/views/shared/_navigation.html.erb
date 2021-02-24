@@ -13,7 +13,7 @@
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
             <%= link_to "#", id: "navbar-dropdown", class: "nav-link dropdown-toggle", data: { target: "nav-account-dropdown", toggle: "dropdown" }, aria: { haspopup: true, expanded: false } do %>
-              <%= image_tag gravatar_image_url(current_user.email, size: 40, secure: true), height: 20, width: 20, class: "rounded" %>
+              <%= current_user.email %>
             <% end %>
             <div aria-labelledby="navbar-dropdown" class="dropdown-menu dropdown-menu-right" id="nav-account-dropdown">
               <%= link_to "Settings", edit_user_registration_path, class: "dropdown-item" %>

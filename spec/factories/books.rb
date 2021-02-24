@@ -3,6 +3,6 @@ FactoryBot.define do
     title { "MyString" }
     author { "MyString" }
     description { "MyText" }
-    status { 1 }
+    status { 0 }
   end
 end
