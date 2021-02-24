@@ -27,6 +27,7 @@ module BookCollection
       g.assets false
       g.channel assets: false
       g.controller_specs false
+      g.routing_specs false
       g.helper false
       g.helper_specs false
       g.view_specs false
