@@ -29,7 +29,7 @@
       </li>
       <li class="list-group-item">
         <strong>Genres:</strong>
-        <%= raw genre_links(@book.all_genres)%>
+         <%= raw genre_links(book_genres_list(@book.id))%>
       </li>
       <li class="list-group-item">
         <strong>Cover:</strong>
