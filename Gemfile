@@ -23,7 +23,6 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "standard"
   gem "shoulda-matchers", require: false
-  gem "faker"
 end
 
 group :development do
@@ -37,3 +36,4 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "devise"
 gem "devise-bootstrapped", github: "excid3/devise-bootstrapped", branch: "bootstrap4"
 gem "pundit"
+gem "faker"

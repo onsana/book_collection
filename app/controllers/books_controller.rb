@@ -5,7 +5,7 @@ class BooksController < ApplicationController
     @books = if user_signed_in?
       Book.includes(:user).where(status: "published").or(Book.where("user_id= ?", current_user.id))
     else
-      Book.published
+      Book.includes(:user).published
     end
     if params[:tag]
       ids = Book.in_genres_ids(params[:tag])
