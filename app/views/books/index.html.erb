@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <h1>Books</h1>
+  <% if notice.present? %>
+    <p id="notice" class="alert alert-primary"><%= notice %></p>
+  <% end %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>User</th>
+        <th>Add date</th>
+        <th>Status</th>
+        <th>Genres</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @books.each do |book| %>
+        <tr>
+          <td>
+            <%= link_to book.title, book %>
+          </td>           
+          <td>
+            <%= book.user.email %>
+          </td>      
+          <td>
+            <%= time_ago_in_words(book.created_at) %>
+          </td>      
+          <td>
+            <%= book.status %>
+          </td>      
+        <td>
+          <%= raw genre_links(book_genres_list(book.id))%>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <% if user_signed_in? %>
+    <%= link_to 'New Book', new_book_path,class:"btn btn-success min-width-btn" %>
+  <% end %>
+</div>

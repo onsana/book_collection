@@ -1,0 +1,40 @@
+<%= form_with(model: book, local: true) do |f| %>
+  <% if book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+      <ul>
+        <% book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class:"form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :status %><br>
+    <%= f.select :status, Book.statuses.keys, {}, class:"form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :author %>
+    <%= f.text_field :author, class:"form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :genres %>
+    <%= f.text_field :all_genres, placeholder: "Genres separated with comma", class:"form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :cover %>
+    <%= f.file_field :cover %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Save", class:"btn btn-success min-width-btn" %>
+  </div>
+<% end %>

@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <h1>Book Details</h1>
+
+  <% if notice.present? %>
+    <p id="notice" class="alert alert-primary"><%= notice %></p>
+  <% end %>
+
+  <div class="card p-4">
+    <ul class="list-group mb-2">
+      <li class="list-group-item">
+        <strong>Title:</strong>
+        <%= @book.title %>
+      </li>
+      <li class="list-group-item">
+        <strong>Book's owner:</strong>
+        <%= @book.user.email %>
+      </li>
+      <li class="list-group-item">
+        <strong>Status:</strong>
+        <%= @book.status %>
+      </li>
+      <li class="list-group-item">
+        <strong>Author:</strong>
+        <%= @book.author %>
+      </li>
+      <li class="list-group-item">
+        <strong>Description:</strong>
+        <%= @book.description %>
+      </li>
+      <li class="list-group-item">
+        <strong>Genres:</strong>
+        <%= raw genre_links(@book.all_genres)%>
+      </li>
+      <li class="list-group-item">
+        <strong>Cover:</strong>
+        <%= image_tag @book.cover %>
+      </li>
+    </ul>
+    <div>
+      <div class="btn-group" role="group">
+        <%= link_to 'Back', books_path, class: 'btn btn-outline-primary' %>
+        <%= link_to 'Edit', edit_book_path(@book), class: 'btn btn-outline-dark' %>
+        <%= link_to 'Destroy', @book, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger' %>
+      </div>
+    </div>
+  </div>
+</div>

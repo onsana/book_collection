@@ -30,8 +30,10 @@ group :development do
   gem "web-console", ">= 4.1.0"
   gem "rack-mini-profiler", "~> 2.0"
   gem "listen", "~> 3.3"
+  gem "bullet"
 end
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "devise"
 gem "devise-bootstrapped", github: "excid3/devise-bootstrapped", branch: "bootstrap4"
+gem "pundit"
