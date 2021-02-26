@@ -14,6 +14,7 @@ end
 end
 
 users = User.all
+Book.destroy_all
 20.times do
   users.each do |user|
     book = user.books.create!(
